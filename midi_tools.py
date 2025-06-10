@@ -92,7 +92,3 @@ def midi_write(mldy_arry,output):
     # write it to disk
     with open("{0}.mid".format(output), 'wb') as outfile:
         mf.writeFile(outfile)
-
-a = MidiFile("twinkle.mid")
-
-print(a)
