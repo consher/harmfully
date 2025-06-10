@@ -13,16 +13,17 @@ def midi_read(filename):
 
     # melody arrays
     mldy_n = []     #notes
-    mldy_t = []     #times
+    mldy_d = []     #note durations
 
     for msg in mf:
         if msg.type == "note_on":
             mldy_n.append(msg.note)
-            mldy_t.append(msg.time)
+        if msg.type == "note_off":
+            mldy_d.append(msg.time)
         if msg.type == "set_tempo":
             tempo = msg.tempo
     
-    return mldy_n, mldy_t, tempo
+    return mldy_n, mldy_d, tempo
 
 
 
